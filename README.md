@@ -59,7 +59,7 @@ Se ha realizado ingeniería inversa desde un prototipo de Figma para configurar 
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/xni0/glass-dashboard.git](https://github.com/xni0/glass-dashboard.git)
+    git clone https://github.com/xni0/glass-dashboard.git
     ```
 
 2.  **Instalar dependencias:**
