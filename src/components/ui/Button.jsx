@@ -1,13 +1,11 @@
 import clsx from 'clsx';
 
 const Button = ({ children, variant = 'primary', disabled, className, ...props }) => {
-  // Ahora rounded-glass-btn aplicará 12px (igual que los inputs)
   const baseStyles = "relative inline-flex items-center justify-center px-8 py-3 font-medium text-sm transition-all duration-300 rounded-glass-btn border backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent active:scale-95";
   
   const variants = {
     primary: [
       "bg-bg-black-20 border-white/10 text-text-white",
-      // Hover con sombra inferior definida
       "hover:bg-bg-black-30 hover:border-purple/30 hover:shadow-purple-glow hover:-translate-y-0.5",
       "focus:ring-purple focus:border-purple"
     ],
