@@ -1,12 +1,28 @@
 import clsx from 'clsx';
 
 const Button = ({ children, variant = 'primary', disabled, className, ...props }) => {
-  const baseStyles = "px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg border backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent active:scale-95";
+  // Ahora rounded-glass-btn aplicará 12px (igual que los inputs)
+  const baseStyles = "relative inline-flex items-center justify-center px-8 py-3 font-medium text-sm transition-all duration-300 rounded-glass-btn border backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent active:scale-95";
   
   const variants = {
-    primary: "bg-white/20 border-white/30 text-white hover:bg-white/30 hover:scale-105 hover:shadow-purple-500/20 focus:ring-purple-400",
-    secondary: "bg-black/20 border-white/10 text-gray-200 hover:bg-black/40 focus:ring-gray-400",
-    danger: "bg-red-500/20 border-red-500/50 text-red-100 hover:bg-red-500/40 focus:ring-red-500",
+    primary: [
+      "bg-bg-black-20 border-white/10 text-text-white",
+      // Hover con sombra inferior definida
+      "hover:bg-bg-black-30 hover:border-purple/30 hover:shadow-purple-glow hover:-translate-y-0.5",
+      "focus:ring-purple focus:border-purple"
+    ],
+    
+    secondary: [
+      "bg-transparent border-border-gray text-text-white",
+      "hover:bg-black hover:border-white",
+      "focus:ring-white focus:border-white"
+    ],
+    
+    danger: [
+      "bg-bg-red-500-default border-bg-red-500-border text-bg-red-500-font-red",
+      "hover:bg-red-500/20 hover:border-red-400 hover:text-red-200 hover:shadow-[0_10px_20px_-5px_rgba(246,56,56,0.4)]",
+      "focus:ring-red-500/70 focus:border-red-500"
+    ],
   };
 
   return (
@@ -14,7 +30,7 @@ const Button = ({ children, variant = 'primary', disabled, className, ...props }
       className={clsx(
         baseStyles,
         variants[variant],
-        disabled && "opacity-50 cursor-not-allowed hover:scale-100 hover:bg-inherit grayscale",
+        disabled && "opacity-40 cursor-not-allowed pointer-events-none grayscale shadow-none hover:shadow-none hover:translate-y-0",
         className
       )}
       disabled={disabled}
